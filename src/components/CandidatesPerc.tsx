@@ -68,7 +68,7 @@ export default function CandidatesPerc() {
   const percentajeData3F = percentajeData3.toFixed(1);
 
   return (
-    <div class="flex w-full font-montserrat flex-col justify-center items-center mt-24 gradientBrown-bg">
+    <div class="flex w-full font-montserrat flex-col justify-center items-center lg:mt-24  gradientBrown-bg">
       <h5 class="mb-12  mt-24 lg:text-4xl text-3xl text-center text-white capitalize ">
         Candidatos y su porcentaje de votos
       </h5>
@@ -79,10 +79,10 @@ export default function CandidatesPerc() {
             src="izquierda-vote.webp"
             alt=""
           />
-          <div class="lg:text-3xl text-xl flex justify-center text-sky-200 p-2">
+          <div class="lg:text-3xl text-xl flex justify-center items-center text-sky-200 p-2">
             Votos: {typeof data0 == 'undefined' ? <Spin /> : data0}
           </div>{' '}
-          <div class="lg:text-3xl  text-xl flex justify-center gap-2 text-sky-200 p-2">
+          <div class="lg:text-3xl  text-xl flex justify-center items-center gap-2 text-sky-200 p-2">
             Porcentaje:{' '}
             {isNaN(parseFloat(percentajeData0F)) ? (
               <Spin />
@@ -97,10 +97,10 @@ export default function CandidatesPerc() {
             src="peronismo-vote.webp"
             alt=""
           />
-          <div class="lg:text-3xl text-xl flex justify-center gap-2 text-sky-200 p-2">
+          <div class="lg:text-3xl text-xl flex items-center justify-center gap-2 text-sky-200 p-2">
             Votos: {typeof data1 == 'undefined' ? <Spin /> : data1}
           </div>{' '}
-          <div class="lg:text-3xl text-xl flex justify-center gap-2 text-sky-200 p-2">
+          <div class="lg:text-3xl text-xl flex items-center justify-center gap-2 text-sky-200 p-2">
             Porcentaje:{' '}
             {isNaN(parseFloat(percentajeData1F)) ? (
               <Spin />
@@ -115,10 +115,10 @@ export default function CandidatesPerc() {
             src="macri-vote.webp"
             alt=""
           />
-          <div class="lg:text-3xl text-xl flex justify-center gap-2 text-sky-200 p-2">
+          <div class="lg:text-3xl text-xl flex items-center justify-center gap-2 text-sky-200 p-2">
             Votos: {typeof data2 == 'undefined' ? <Spin /> : data2}
           </div>{' '}
-          <div class="lg:text-3xl text-xl flex justify-center gap-2 text-sky-200 p-2">
+          <div class="lg:text-3xl text-xl flex items-center justify-center gap-2 text-sky-200 p-2">
             Porcentaje:{' '}
             {isNaN(parseFloat(percentajeData2F)) ? (
               <Spin />
@@ -133,10 +133,10 @@ export default function CandidatesPerc() {
             src="milei-vote.webp"
             alt=""
           />
-          <div class="lg:text-3xl text-xl flex justify-center gap-2 text-sky-200 p-2">
+          <div class="lg:text-3xl text-xl flex items-center justify-center gap-2 text-sky-200 p-2">
             Votos: {typeof data3 == 'undefined' ? <Spin /> : data3}
           </div>{' '}
-          <div class="lg:text-3xl text-xl flex justify-center gap-2 text-sky-200 p-2">
+          <div class="lg:text-3xl text-xl flex items-center justify-center gap-2 text-sky-200 p-2">
             Porcentaje:{' '}
             {isNaN(parseFloat(percentajeData3F)) ? (
               <Spin />

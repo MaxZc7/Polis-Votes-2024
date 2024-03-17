@@ -10,7 +10,7 @@ export default function Header() {
     <header
       class={`${
         menuOpen ? 'h-screen ' : ''
-      } fixed top-0 w-full py-4 headerBgBlurMobile  text-white textShadow z-50`}
+      } fixed top-0 w-full py-4 headerBgBlurMobile  text-white textShadow z-50 `}
     >
       <div class="flex  items-center max-w-7xl justify-between mx-auto px-4">
         <div class="flex  justify-between w-full lg:w-auto z-50">
@@ -19,9 +19,13 @@ export default function Header() {
           </a>
           <button
             onClick={() => toggleMenu()}
-            class="text-3xl focus:outline-none lg:hidden z-50"
+            class="text-3xl focus:outline-none lg:hidden z-50 "
           >
-            <i class="fas fa-bars"></i>
+            {menuOpen ? (
+              <i class="fas fa-xmark"></i>
+            ) : (
+              <i class="fas fa-bars"></i>
+            )}
           </button>
         </div>
         {/* mobile nav */}

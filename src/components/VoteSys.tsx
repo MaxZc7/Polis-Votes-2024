@@ -66,7 +66,7 @@ export default function VoteSys() {
   return (
     <>
       <div>
-        <h2 class="text-white  text-center lg:text-4xl text-3xl mb-10 lg:mt-4 mt-48">
+        <h2 class="text-white  text-center lg:text-4xl text-3xl mb-10 lg:mt-4 mt-24">
           {status == 'NORMAL' ? (
             <h1>Votá Segun Tu Mirada!</h1>
           ) : (
