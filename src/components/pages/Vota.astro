@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { SignIn, SignOut } from 'auth-astro/components';
+import VoteSys from '../VoteSys.tsx';
+import DarkVoteSys from '../DarkVoteSys.tsx';
+import { getSession } from 'auth-astro/server';
+
+const session = await getSession(Astro.request);
+---
+
+<Layout title="Votá Polis 2024">
+  <section
+    class="mt-48 lg:mb-0 flex flex-col justify-center items-center font-montserrat gradientBrown-bg"
+  >
+    {
+      session ? (
+        <>
+          <VoteSys client:load />
+        </>
+      ) : (
+        <>
+          <h2 class="text-white text-center   lg:text-4xl text-3xl  mb-10 lg:mt-4 mt-48">
+            Logueate Para Poder Votar!
+          </h2>
+          <DarkVoteSys />
+        </>
+      )
+    }
+
+    <div class="w-full flex justify-center items-center">
+      {
+        session ? (
+          <>
+            <div class="flex flex-col justify-center items-center ">
+              <div class="flex justify-center items-center  gap-2 bg-black/30 rounded-xl p-3  ">
+                <div class="flex gap-4  m-1">
+                  <img
+                    class="rounded-full w-12"
+                    src={`${session.user?.image}`}
+                    alt=""
+                  />
+                  <div>
+                    <p class="text-white text-xl capitalize">
+                      {session.user?.name}{' '}
+                    </p>
+                    <SignOut class="text-white tracking-wider font-semibold textGlow  ">
+                      Cerrar Sessión
+                    </SignOut>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div>
+              <p class="text-center p-2 text-white text-xl tracking-wider font-semibold">
+                Login
+              </p>
+              <div class="flex gap-2 items-center">
+                <SignIn
+                  provider="google"
+                  class="border border-white p-2 rounded-2xl px-4 text-white hover:text-black hover:bg-white transition-all tracking-wider font-semibold flex items-center gap-2"
+                >
+                  <i class="fa-brands fa-google text-xl" />
+
+                  <span>Google</span>
+                </SignIn>
+                <p class="text-white text-xl">Or</p>
+                <SignIn
+                  provider="github"
+                  class="border border-white p-2 rounded-2xl px-4 text-white hover:text-black hover:bg-white transition-all tracking-wider font-semibold flex items-center gap-2"
+                >
+                  <i class="fa-brands fa-github text-xl" />
+
+                  <span>Github</span>
+                </SignIn>
+              </div>
+            </div>
+          </>
+        )
+      }
+    </div>
+
+    <div class="mt-2">
+      <h3
+        class="text-white text-center text-lg uppercase tracking-wider p-4 opacity-80"
+      >
+        Ideologia Segun Aproximidad
+      </h3>
+      <div
+        class="w-[95vw] h-4 rounded-xl overflow-hidden bg-gradient-to-r from-red-900 flex items-center to-blue-900 relative"
+      >
+        <span
+          class="text-[#ffc3c3] p-2 text-sm uppercase tracking-wider opacity-80"
+        >
+          Izquierda</span
+        >
+        <div class="w-full flex justify-center absolute inset-0 items-center">
+          <span
+            class="text-[#b4bfff] p-2 text-sm uppercase tracking-wider opacity-80"
+          >
+            Centro</span
+          >
+        </div>
+        <div class="w-full flex justify-end">
+          <span
+            class="text-[#b4bfff] p-2 text-sm uppercase tracking-wider opacity-80"
+          >
+            Derecha</span
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script></script>

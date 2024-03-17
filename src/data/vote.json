@@ -1,0 +1,22 @@
+[
+    {
+        "vote-id": "0",
+        "vote-name": "Frente De Izquierda",
+        "vote-image": "izquierda"
+    },
+    {
+        "vote-id": "1",
+        "vote-name": "Union Por la Patria",
+        "vote-image": "peronismo"
+    },
+    {
+        "vote-id": "2",
+        "vote-name": "Juntos Por El Cambio",
+        "vote-image": "macri"
+    },
+    {
+        "vote-id": "3",
+        "vote-name": "La Libertad Avanza",
+        "vote-image": "milei"
+    }
+]
